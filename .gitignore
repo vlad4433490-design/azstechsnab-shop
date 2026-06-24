@@ -1,0 +1,35 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# next
+.next/
+out/
+
+# production
+build/
+
+# local env
+.env
+.env.local
+.env.*.local
+
+# prisma local database
+prisma/dev.db
+prisma/dev.db-journal
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.tsbuildinfo
+
+# tests
+test-results/
+playwright-report/
+
+# system
+.DS_Store
+Thumbs.db
