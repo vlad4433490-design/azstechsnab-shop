@@ -4,8 +4,18 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { CartProvider } from "@/components/cart/CartProvider";
 
+function getMetadataBase() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+  if (!siteUrl) return new URL("http://localhost:3000");
+
+  try {
+    return new URL(siteUrl);
+  } catch {
+    return new URL("http://localhost:3000");
+  }
+}
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: getMetadataBase(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
   title: {
     default: "АЗСТЕХСНАБ - интернет-магазин технических товаров",
     template: "%s | АЗСТЕХСНАБ"
